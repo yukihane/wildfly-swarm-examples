@@ -10,21 +10,20 @@
 
   <parent>
     <groupId>org.wildfly.swarm.examples</groupId>
-    <artifactId>examples-parent</artifactId>
+    <artifactId>examples-security</artifactId>
     <version>2018.5.0-SNAPSHOT</version>
     <relativePath>../</relativePath>
   </parent>
 
-  <artifactId>examples-security</artifactId>
+  <artifactId>example-elytron-parent</artifactId>
 
-  <name>WildFly Swarm Examples: Security parent</name>
-  <description>WildFly Swarm Examples: Security parent</description>
+  <name>WildFly Swarm Examples: Security Elytron parent</name>
+  <description>WildFly Swarm Examples: Security Elytron</description>
 
   <packaging>pom</packaging>
 
   <modules>
-    <module>jaas</module>
-    <module>keycloak</module>
-    <module>elytron</module>
+    <module>basic</module>
   </modules>
+
 </project>

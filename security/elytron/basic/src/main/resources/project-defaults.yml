@@ -1,0 +1,61 @@
+swarm:
+  deployment:
+    example-elytron-basic.war:
+      web:
+        login-config:
+          auth-method: BASIC
+          security-domain: my-domain
+        security-constraints:
+          - url-pattern: /*
+            methods: [GET]
+            roles: [admin, user]
+
+  ejb3:
+    application-security-domains:
+      my-domain:
+        security-domain: my-domain
+
+  elytron:
+    security-domains:
+      my-domain:
+        default-realm: my-jdbc-realm
+        realms:
+          -
+            realm: my-jdbc-realm
+            role-decoder: groups-to-roles
+        permission-mapper: default-permission-mapper
+    jdbc-realms:
+      my-jdbc-realm:
+        principal-query:
+          -
+            data-source: MyDS
+            sql: SELECT role, password FROM REST_DB_ACCESS WHERE name = ?
+            attribute-mapping:
+              -
+                to: Roles
+                index: 1
+            clear-password-mapper:
+              password-index: 2
+    http-authentication-factories:
+      my-app-auth:
+        http-server-mechanism-factory: global
+        security-domain: my-domain
+        available-mechanisms:
+          - BASIC
+        mechanism-configurations:
+          -
+            mechanism-name: BASIC
+            mechanism-realm:
+              realm-name: my-jdbc-realm
+  undertow:
+    application-security-domains:
+      my-domain:
+        http-authentication-factory: my-app-auth
+
+  datasources:
+    data-sources:
+      MyDS:
+        driver-name: h2
+        connection-url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        user-name: sa
+        password: sa
