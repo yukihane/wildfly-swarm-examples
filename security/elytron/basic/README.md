@@ -13,7 +13,7 @@ You can run it many ways:
 
 ## Bug Notice
 
-The elytron fraction currently (2018.5.0-SNAPSHOT) ignores mappings in swarm.elytron.jdbc-realms.KEY.principal-query, e.g. 'attribute-mapping' or 'clear-password-mapper'. See [SWARM-???](https://issues.jboss.org/browse/SWARM-???) for details.
+The elytron fraction currently (2018.5.0-SNAPSHOT) ignores mappings in swarm.elytron.jdbc-realms.KEY.principal-query, e.g. 'attribute-mapping' or 'clear-password-mapper'. See [SWARM-1985](https://issues.jboss.org/browse/SWARM-1985) for details.
 
 Workaround: Properly setup the elytron fraction as .xml. See an example for this project here in (src/main/resources/standalone.xml.workaround)[src/main/resources/standalone.xml.workaround]. When you rename that file to `src/main/resources/standalone.xml`, and rerun this example application, it will all work.
 
