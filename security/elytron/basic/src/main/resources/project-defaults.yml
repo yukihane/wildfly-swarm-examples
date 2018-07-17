@@ -32,7 +32,7 @@ swarm:
             sql: SELECT role, password FROM REST_DB_ACCESS WHERE name = ?
             attribute-mapping:
               -
-                to: Roles
+                to: groups
                 index: 1
             clear-password-mapper:
               password-index: 2
