@@ -45,8 +45,9 @@ swarm:
         mechanism-configurations:
           -
             mechanism-name: BASIC
-            mechanism-realm:
-              realm-name: my-jdbc-realm
+            mechanism-realm-configurations:
+              -
+                realm-name: my-jdbc-realm
   undertow:
     application-security-domains:
       my-domain:
