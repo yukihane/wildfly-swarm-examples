@@ -9,9 +9,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.wildfly.swarm.examples</groupId>
+        <groupId>io.thorntail.examples</groupId>
         <artifactId>example-elytron-parent</artifactId>
-        <version>2018.5.0-SNAPSHOT</version>
+        <version>2.0.0.Final</version>
     </parent>
 
     <artifactId>example-elytron-basic</artifactId>
@@ -28,8 +28,8 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.wildfly.swarm</groupId>
-                <artifactId>wildfly-swarm-plugin</artifactId>
+                <groupId>io.thorntail</groupId>
+                <artifactId>thorntail-maven-plugin</artifactId>
                 <executions>
                     <execution>
                         <id>package</id>
@@ -47,19 +47,19 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.wildfly.swarm.examples</groupId>
+            <groupId>io.thorntail.examples</groupId>
             <artifactId>examples-base</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.wildfly.swarm</groupId>
+            <groupId>io.thorntail</groupId>
             <artifactId>jaxrs</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.wildfly.swarm</groupId>
+            <groupId>io.thorntail</groupId>
             <artifactId>cdi</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.wildfly.swarm</groupId>
+            <groupId>io.thorntail</groupId>
             <artifactId>jpa</artifactId>
         </dependency>
         <dependency>
